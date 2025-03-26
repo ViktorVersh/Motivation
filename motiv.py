@@ -20,7 +20,7 @@ async def menu_motiv(message: types.Message):
 
 # Функция получения мотивации на день
 @motiv_router.message(F.text == "✅Мотивация для Вас")
-async def get_motivation(message: types.Message, state: FSMContext):
+async def get_motivation(message: types.Message):
     try:
         # Проверяем, есть ли записи в базе данных
         has_records = await db.has_records_in_table('Motivation')

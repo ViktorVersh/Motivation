@@ -7,15 +7,16 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import BotCommand
 
 import config
-# import config  # настройка конфигурации подключение Токена
-from start import router  # подключение модуля commands
+# настройка конфигурации подключение Токена
+
+from start import router
 from dbase import db
 from motiv import motiv_router
 
 # настройка логирования
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=config.TOKEN)  # loop не нужен, aiogram сам управляет циклом событий
+bot = Bot(token=config.TOKEN)
 
 
 async def set_bot_commands():
